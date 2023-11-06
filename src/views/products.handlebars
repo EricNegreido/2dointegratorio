@@ -1,0 +1,32 @@
+
+<div>
+    <h1> Hello, Welcome {{ user.name}} </h1>
+    <p>{{ user.email}}</p>
+    <p>{{ user.age}}</p>
+    <p>{{ user.rol}}</p>
+
+</div>
+    <h2>Products list</h2>
+    <div class="product-list">
+        {{#each product}}
+        <div class="product-card">
+            <h2>{{this.title}}</h2>
+            <p>{{this.description}}</p>
+            <button>Agregar al Carrito</button>
+        </div>
+        {{/each}}
+    </div>
+    
+    <div class="pagination">
+        </br>
+        <a href="/api/sessions/logout"><button> Logout </button></a>
+        </br>
+        </br>
+
+        {{#if hasPrevPage}}
+            <a href="?page={{prevPage}}">Previous</a>
+        {{/if}}
+        {{#if hasNextPage}}
+            <a href="?page={{nextPage}}">Next</a>
+        {{/if}}
+    </div>
